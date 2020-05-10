@@ -3,6 +3,7 @@
 @import "styles/textbox";
 @import "styles/button";
 @import "styles/radiobutton";
+@import "styles/animation";
 
 body {
   background-color: $primary-color;
@@ -14,6 +15,13 @@ body {
 
 .error {
   color: $red-color-lighter;
+}
+.logo {
+  width: 300px;
+}
+
+.logo-big {
+  margin-top: 6vh;
 }
 
 .signin-container {
@@ -63,5 +71,39 @@ body {
         font-size: 0.7rem;
       }
     }
+  }
+}
+
+.home-container {
+  height: 100vh;
+  background-color: white;
+
+  .header {
+    background-color: $primary-color;
+    text-align: center;
+
+    & > .nav {
+      height: 4.5vh;
+      width: 100vw;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .icon {
+        width: 24px;
+        margin-right: 25px;
+
+        &:hover {
+          animation: rotation 1.5s linear;
+        }
+      }
+    }
+  }
+  .header.big {
+    height: 33.3vh;
+  }
+
+  .page-content {
+    height: 66.6vh;
   }
 }
