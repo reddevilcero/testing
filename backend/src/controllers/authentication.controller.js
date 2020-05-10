@@ -9,8 +9,8 @@ const dbConfig = {
   server: process.env.DB_SERVER,
   database: process.env.DB_NAME,
   options: {
-    enableArithAbort: true
-  }
+    enableArithAbort: true,
+  },
 };
 
 authCtrl.login = async (req, res) => {
@@ -21,7 +21,7 @@ authCtrl.login = async (req, res) => {
     .input("pwd", req.body.password)
     .query(queries.login);
   let user = result["recordset"][0];
-  if (user == null) res.json({ message: "Invalid Email or Password" });
+  if (user == null) res.sendStatus(400);
   else {
     user.Password = "";
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);

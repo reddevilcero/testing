@@ -2,6 +2,7 @@
 @import "styles/clean";
 @import "styles/textbox";
 @import "styles/button";
+@import "styles/radiobutton";
 
 body {
   background-color: $primary-color;
@@ -9,6 +10,10 @@ body {
 
 .text-bold {
   font-weight: 500;
+}
+
+.error {
+  color: $red-color-lighter;
 }
 
 .signin-container {

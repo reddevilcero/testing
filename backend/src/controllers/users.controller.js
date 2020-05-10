@@ -8,8 +8,8 @@ const dbConfig = {
   server: process.env.DB_SERVER,
   database: process.env.DB_NAME,
   options: {
-    enableArithAbort: true
-  }
+    enableArithAbort: true,
+  },
 };
 
 usersCtrl.getUser = async (req, res) => {
@@ -18,24 +18,6 @@ usersCtrl.getUser = async (req, res) => {
     .request()
     .input("id", req.params.id)
     .query(queries.getUser);
-  res.json(result["recordset"]);
-};
-
-usersCtrl.getUsersByType = async (req, res) => {
-  let pool = await sql.connect(dbConfig);
-  let result = await pool
-    .request()
-    .input("userTypeId", req.params.usertypeid)
-    .query(queries.getUsersByType);
-  res.json(result["recordset"]);
-};
-
-usersCtrl.getUsersByService = async (req, res) => {
-  let pool = await sql.connect(dbConfig);
-  let result = await pool
-    .request()
-    .input("serviceId", req.params.serviceid)
-    .query(queries.getUsersByService);
   res.json(result["recordset"]);
 };
 
@@ -54,10 +36,7 @@ usersCtrl.createUser = async (req, res) => {
 
 usersCtrl.deleteUser = async (req, res) => {
   let pool = await sql.connect(dbConfig);
-  await pool
-    .request()
-    .input("id", req.params.id)
-    .query(queries.deleteUser);
+  await pool.request().input("id", req.params.id).query(queries.deleteUser);
   res.sendStatus(200);
 };
 
