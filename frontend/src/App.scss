@@ -1,5 +1,62 @@
 @import "styles/_variables";
+@import "styles/clean";
+@import "styles/textbox";
+@import "styles/button";
 
-.btn {
+body {
   background-color: $primary-color;
+}
+
+.text-bold {
+  font-weight: 500;
+}
+
+.signin-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .white-container {
+    background-color: white;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .space-between-fields {
+      margin-top: 30px;
+    }
+
+    .space-between-fields-last {
+      margin-bottom: 30px;
+    }
+
+    .icon:before {
+      position: absolute;
+      left: -5px;
+      font-family: "FontAwesome";
+      font-size: 1.2rem;
+      color: #8c8c8c;
+    }
+
+    .icon-envelope:before {
+      content: $fa-content-envelope;
+    }
+
+    .icon-lock:before {
+      font-size: 1.5rem;
+      left: -3px;
+      content: $fa-content-lock;
+    }
+
+    .footer {
+      & > a {
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 0.7rem;
+      }
+    }
+  }
 }

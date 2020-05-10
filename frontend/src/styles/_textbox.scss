@@ -1,0 +1,47 @@
+.input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 20px);
+    color: black;
+    transition: 0.2s all;
+    cursor: text;
+    margin-left: 20px;
+  }
+  input {
+    width: calc(100% - 20px);
+    border: 0;
+    outline: 0;
+    padding: 0.1rem 0;
+    border-bottom: 1px solid black;
+    box-shadow: none;
+    color: black;
+    margin-left: 20px;
+    font-family: Raleway;
+    font-weight: lighter;
+  }
+
+  input:focus,
+  input:valid {
+    border-color: $primary-color;
+  }
+  input:focus ~ label,
+  input:valid ~ label {
+    font-size: 14px;
+    top: -24px;
+    color: $primary-color;
+  }
+
+  &:focus-within {
+    &::before {
+      font-size: 1.2rem;
+      color: $primary-color !important;
+    }
+  }
+}
