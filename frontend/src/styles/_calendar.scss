@@ -1,0 +1,117 @@
+.calendar-parent {
+  width: 450px;
+  height: 450px;
+}
+
+.calendar-container {
+  padding: 0;
+  margin: 0;
+  .calendar,
+  .calendar-header,
+  td,
+  tr {
+    padding: 0;
+    margin: 0;
+  }
+
+  .calendar-container {
+    border: 2px solid $primary-color;
+  }
+
+  .calendar {
+    background-color: white;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .arrow-color {
+    color: $primary-color;
+  }
+
+  .calendar-header {
+    text-align: center;
+    font-size: 1.6em;
+  }
+
+  .calendar-header td {
+    border-spacing: 0;
+    padding-left: 5px;
+  }
+
+  .day,
+  .empty-slot,
+  .week-day {
+    text-align: center;
+    height: 40px;
+  }
+
+  .week-day {
+    font-size: 0.8em;
+  }
+
+  .day {
+    font-size: 0.9em;
+    width: 14.2857%;
+    border: 1px solid $primary-color;
+  }
+
+  .day {
+    cursor: pointer;
+    height: 60px;
+    line-height: 24px;
+  }
+
+  .current-day {
+    background-color: $primary-color;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 2%;
+    color: white;
+  }
+  .selected-day {
+    background-color: yellow;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 2%;
+    color: black;
+  }
+
+  .month-popup {
+    position: absolute;
+    padding: 5px;
+    background: white;
+    border: 2px solid $primary-color;
+  }
+
+  .month-popup div {
+    padding: 0.3em;
+  }
+
+  .editor-year {
+    max-width: 3.6em;
+  }
+
+  .label-month,
+  .label-year {
+    font-size: 0.6em;
+  }
+
+  .label-month {
+    cursor: pointer;
+  }
+
+  .day-with-booking {
+    background-color: red;
+  }
+
+  .calendar-parent {
+    margin: auto 200px;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+}
